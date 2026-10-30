@@ -2,8 +2,6 @@
 
 Official implementation of **PopKV**, a training-free KV-cache retrieval method for long-context autoregressive decoding.
 
-[Paper](https://openreview.net/forum?id=7kA636r4L1) · [Minseok Choi](https://openreview.net/profile?id=~Minseok_Choi6) · [Geonhee Jang](https://openreview.net/profile?id=~Geonhee_Jang1)
-
 PopKV encodes query/key retrieval metadata as sign and magnitude bit planes, ranks cached tokens with CUDA popcount kernels, and computes attention over the selected full-precision K/V entries. It reduces retrieval and attention work while retaining the original K/V cache.
 
 ## Methods
@@ -200,5 +198,3 @@ GPU tests require CUDA; they are skipped when CUDA is unavailable. Token-group a
 ## Scope
 
 This implementation targets Llama-style autoregressive decoding and supports per-query-head retrieval with MHA/GQA/MQA mappings. Prefix prefill remains dense. The method compresses retrieval metadata rather than the final attention values. Absolute timings depend on hardware, software, compilation, and profiling overhead; comparisons should use the same measurement setup.
-
-For citation metadata, see the [paper page](https://openreview.net/forum?id=7kA636r4L1).
