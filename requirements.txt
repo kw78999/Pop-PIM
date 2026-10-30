@@ -1,0 +1,8 @@
+accelerate>=0.33
+datasets>=2.20
+huggingface_hub>=0.24
+safetensors>=0.4
+transformers>=4.56,<5
+ninja>=1.11
+triton>=3.0
+matplotlib>=3.8
